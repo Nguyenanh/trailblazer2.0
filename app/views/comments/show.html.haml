@@ -1,0 +1,17 @@
+%p#notice= notice
+
+%h1= @comment['model'].id
+
+%table
+  %thead
+    %tr
+      %th
+  %tbody
+    %tr
+      %td= @comment['model'].body
+
+%br
+
+= link_to 'Edit', edit_comment_path(@comment['model'])
+\|
+= link_to 'Back', comments_path

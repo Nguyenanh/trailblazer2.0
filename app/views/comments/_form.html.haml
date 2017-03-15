@@ -1,0 +1,10 @@
+= simple_form_for @comment['model'] do |f|
+  - if @comment.failure?
+    #error_explanation
+      %h2= "#{pluralize(@comment["contract.default"].errors.count, "error")} prohibited this comment from being saved:"
+      %ul
+        - @comment["contract.default"].errors.messages.each do |key, msg|
+          %li= key.to_s + ":" + msg.first
+  = f.input :body
+  .actions
+    = f.submit 'Save'
